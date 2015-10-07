@@ -1,0 +1,33 @@
+<div class ="row">
+  <div class="col-sm-3">
+    <div>
+
+    </div>
+     {{#each lists as |list|}}
+          <div class="panel panel-default">
+
+
+            <div class="panel-body" style="background-color:lightgreen"> {{ list.name }}</div> <button class="panel-footer"{{action 'deleteList' list}}> X </button>
+
+
+          </div>
+
+      {{/each}}
+
+  </div>
+     <div class="col-sm-3">
+     <div>
+       <p>Fill the box below and press enter to make a todo</p>
+     </div>
+     <div>
+      {{input value=todo action="addlist" size=50}}
+     </div>
+   </div>
+</div>
+
+
+
+
+
+
+
