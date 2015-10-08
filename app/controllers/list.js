@@ -13,8 +13,8 @@ export default Ember.Controller.extend({
        addlist: function(name) {
     var listItem = this.store.createRecord('list');
     listItem.set('name',name);
-         
-     
+
+
     listItem.save();
     },
 
@@ -22,6 +22,13 @@ export default Ember.Controller.extend({
     list.deleteRecord();
     list.save();
     },
+
+      save: function(list){
+    list.save();
+    },
+
+
+
 
   }
 });

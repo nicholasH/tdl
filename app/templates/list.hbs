@@ -7,8 +7,12 @@
           <div class="panel panel-default">
 
 
-            <div class="panel-body" style="background-color:lightgreen"> {{ list.name }}</div> <button class="panel-footer"{{action 'deleteList' list}}> X </button>
-
+            <div class="panel-body" style="background-color:lightgreen"> {{ list.name }}</div>
+            <div class = 'todo{{if list.completed 'completed'}}'>
+              <span><button class="panel-footer"{{action 'deleteList' list}}> X </button></span>
+              <span>{{input type = 'checkbox' checked=list.completed }}</span>
+              <span><button {{action 'save' list}}> save </button></span>
+            </div>
 
           </div>
 
@@ -20,7 +24,7 @@
        <p>Fill the box below and press enter to make a todo</p>
      </div>
      <div>
-      {{input value=todo action="addlist" size=50}}
+      {{input enter="addlist" size=50}}
      </div>
    </div>
 </div>
